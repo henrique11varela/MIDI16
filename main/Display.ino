@@ -21,7 +21,7 @@ void buttonDisplay(int x) {
   };
   display.clearDisplay();
   for (int i = 0; i < 16; i++) {
-    if (buttonState[i]) {
+    if (faceButtonState[i][0]) {
       display.fillCircle(buttonCoords[i][0], buttonCoords[i][1], 5, 1);
     } else {
       display.drawCircle(buttonCoords[i][0], buttonCoords[i][1], 5, 1);

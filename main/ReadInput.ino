@@ -6,11 +6,18 @@ void readFaceButtons(){
       digitalWrite(s[j], (binary % 2 == 1) ? HIGH : LOW);
       binary /= 2;
     }
-    buttonState[i] = !digitalRead(sig); //read Sig pin
+    faceButtonState[i][1] = faceButtonState[i][0];
+    faceButtonState[i][0] = !digitalRead(sig); //read Sig pin
   }
 };
 
 void readLever(){
-  leverState[0] = !digitalRead(lever[0]);
-  leverState[1] = !digitalRead(lever[1]);
+  leverState[0][1] = leverState[0][0];
+  leverState[1][1] = leverState[1][0];
+  leverState[0][0] = !digitalRead(lever[0]);
+  leverState[1][0] = !digitalRead(lever[1]);
+};
+
+void readButton(){
+  buttonState = digitalRead(button);
 };
