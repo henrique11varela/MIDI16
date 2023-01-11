@@ -9,3 +9,8 @@ void readFaceButtons(){
     buttonState[i] = !digitalRead(sig); //read Sig pin
   }
 };
+
+void readLever(){
+  leverState[0] = !digitalRead(lever[0]);
+  leverState[1] = !digitalRead(lever[1]);
+};
