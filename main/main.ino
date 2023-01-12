@@ -42,7 +42,7 @@ void setup() {
   Serial.begin(9600);                                   //setup Serial bus
   display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS);  //setup SSD1306
   display.clearDisplay();
-  display.setTextSize(3);
+  display.setTextSize(2);
   display.setTextColor(1, 0);
   display.display();
 }
@@ -54,11 +54,13 @@ void loop() {
   if (buttonState) {  // play mode
     switch (activeMenu[0]) {
       case 0:
+        mode0();
         break;
       case 1:
+        mode1();
         break;
       case 2:
-        buttonDisplay(0);
+        mode2();
         break;
       default:
         break;
